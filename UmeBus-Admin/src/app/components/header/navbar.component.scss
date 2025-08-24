@@ -1,0 +1,45 @@
+
+  mat-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  .mat-mdc-menu-item, .mat-mdc-menu-item:visited, .mat-mdc-menu-item:link{
+    color: #121212 !important;
+  }
+  .title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #121212 !important;
+  }
+  .mat-toolbar {
+  display: flex;
+  align-items: center;
+}
+
+.spacer {
+  flex-grow: 1; /* Pushes content to the right */
+}
+
+  
+  .spacer {
+    flex-grow: 1;
+  }
+  
+  /* Dark Mode Styles */
+  .dark-theme {
+    background: #121212;
+    color: #ffffff;
+  }
+  
+  .dark-theme mat-toolbar {
+    background: #1e1e1e;
+  }
+  
+  .dark-theme mat-menu {
+    background: #333;
+    color: white;
+  }
+  

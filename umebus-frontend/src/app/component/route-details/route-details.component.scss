@@ -1,0 +1,114 @@
+$bus-color: #ff5722;
+$route-color: #3498db;
+$bg-color: #f4f4f4;
+$text-color: #333;
+$highlight-color: #2ecc71;
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: $bg-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.tracker-container {
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.route {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background: $route-color;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.stops {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  position: absolute;
+}
+
+.stop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $text-color;
+  cursor: pointer;
+
+  .dot {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 4px solid $route-color;
+    border-radius: 50%;
+    transition: background 0.3s;
+  }
+  .stop-name{
+    color: #fff;
+  }
+
+  &.active {
+    .dot {
+      background: $highlight-color;
+      border-color: darken($highlight-color, 10%);
+    }
+    .stop-name {
+      font-weight: bold;
+      color: $highlight-color;
+    }
+  }
+
+  .stop-name {
+    margin-top: 5px;
+  }
+
+  .eta {
+    font-size: 12px;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 5px;
+  }
+}
+
+// .bus {
+//   width: 50px;
+//   height: 50px;
+//   background: $bus-color;
+//   border-radius: 50%;
+//   position: absolute;
+//   bottom: -20px;
+//   left: 86% !important;
+//   transition: left 1s ease-in-out;
+// }
+
+
+button {
+  background: $bus-color;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+
+  &:hover {
+    background: darken($bus-color, 10%);
+  }
+}

@@ -1,0 +1,63 @@
+<div class="heading">
+  <h1 mat-dialog-title>{{ data.editMode ? 'Edit Station Route' : 'Add Station Route' }}</h1>
+</div>
+
+<div mat-dialog-content>
+  <form #stationForm="ngForm">
+    <div class="form-group">
+      <label>Bus ID:</label>
+      <input type="number" [(ngModel)]="station.busId" name="busId" required />
+    </div>
+
+    <div class="form-group">
+      <label>From Station:</label>
+      <input type="text" [(ngModel)]="station.fromStation" name="fromStation" required />
+    </div>
+
+    <div class="form-group">
+      <label>To Station:</label>
+      <input type="text" [(ngModel)]="station.toStation" name="toStation" required />
+    </div>
+
+    <div class="form-group">
+      <label>Via Route:</label>
+      <input type="text" [(ngModel)]="station.viaRouteName" name="viaRouteName" required />
+    </div>
+
+    <div class="form-group">
+      <label>Date:</label>
+      <input type="date" [(ngModel)]="station.date" name="date" required />
+    </div>
+
+    <div class="form-group">
+      <label>Departure Time:</label>
+      <input type="time" [(ngModel)]="station.departureTime" name="departureTime" required />
+    </div>
+
+    <div class="form-group">
+      <label>Drop Time:</label>
+      <input type="time" [(ngModel)]="station.dropTime" name="dropTime" required />
+    </div>
+
+    <div class="form-group">
+      <label>Total Distance (KM):</label>
+      <input type="number" [(ngModel)]="station.totalDistance" name="totalDistance" required />
+    </div>
+
+    <div class="form-group">
+      <label>Days Available:</label>
+      <input type="text" [(ngModel)]="station.daysAvailable" name="daysAvailable" required />
+    </div>
+
+    <div class="dialog-actions">
+      <button mat-button mat-dialog-close (click)="closeDialog()">Close</button>
+      <button type="submit" mat-raised-button color="primary" (click)="saveStation()">
+        {{ data.editMode ? 'Update Route' : 'Add Route' }}
+      </button>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message mt-2 text-danger">
+      {{ errorMessage }}
+    </div>
+  </form>
+</div>

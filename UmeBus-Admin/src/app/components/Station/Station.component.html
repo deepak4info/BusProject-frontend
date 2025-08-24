@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="header">
+      <h2 class="title">Station </h2>
+    </div>
+  <div >
+
+ 
+    <table class="table table-striped table-bordered" *ngIf="!loading">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>stationID</th>
+          <th>Station Name</th>
+          <th>Revenue Name</th>
+          <th>Tehsil</th>
+          <th>District</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let route of stations; let i = index" class="fade-in">
+          <td>{{ i + 1 }}</td>
+          <td>{{route.stationID + 1 }}</td>
+          <td>{{ route.stationName }}</td>
+          <td>{{ route.revenueName }}</td>
+          <td>{{ route.tahsil }}</td>
+          <td>{{ route.district }}</td>
+          <td>{{ route.doneAt | date: 'mediumDate' }}</td> 
+          <td>{{ route.isActive }}</td>
+        
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="stations.length === 0" class="alert alert-warning text-center fade-in">
+      No Data Found
+    </div>
+  
+    <div *ngIf="loading" class="text-center mt-4">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    </div>
+</div>
+
+  

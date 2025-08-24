@@ -1,0 +1,97 @@
+// Custom Bootstrap overrides
+$primary-color: #2c3e50;
+$secondary-color: #6c757d;
+$warning-color: #ffc107;
+$danger-color: #dc3545;
+
+.container {
+
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: $primary-color;
+}
+
+.add-btn {
+  display: block;
+  width: 180px;
+//   margin: 0 auto;
+margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.route-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  th, td {
+    text-align: center;
+    padding: 10px;
+    vertical-align: middle;
+  }
+
+  th {
+    background: $primary-color;
+    color: white;
+  }
+}
+
+.edit-btn {
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: darken($warning-color, 10%);
+  }
+}
+
+.add-btn{
+    background-color: #2c3e50;
+    color: #fff;
+}
+.delete-btn {
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: darken($danger-color, 10%);
+  }
+}
+
+// Animation for rows
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

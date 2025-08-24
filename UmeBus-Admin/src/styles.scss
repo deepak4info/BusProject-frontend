@@ -1,0 +1,32 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: Roboto, sans-serif;
+}
+
+.mat-drawer-container {
+  height: 100vh;
+}
+
+
+.mat-drawer-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.mdc-list-item__primary-text {
+    display: flex !important; /* Ensures flex layout */
+    align-items: center; /* Aligns items vertically */
+    gap: 8px !important; /* Adds spacing between elements */
+  }
+  .mat-menu-panel {
+    z-index: 1000 !important;
+  }
+  
+
+:root {
+    --mat-sys-on-surface: white !important; /* Force white text */
+  }
+  

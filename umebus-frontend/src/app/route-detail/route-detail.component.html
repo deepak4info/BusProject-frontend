@@ -1,0 +1,54 @@
+<div class="container-fluid px-4 py-5">
+  <div class="text-center mb-4">
+    <h2 class="fw-bold text-primary">
+      🚌 Route Station Details
+    </h2>
+    <p class="text-muted">Check all stops with timing & bus info</p>
+  </div>
+
+  <div *ngIf="busDetail.length > 0; else noData">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover text-center align-middle shadow-sm">
+        <thead class="table-primary">
+          <tr>
+            <th>Station Name</th>
+            <th>Bus No</th>
+            <th>Bus Type</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Arrival Time</th>
+            <th>Departure Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of busDetail">
+            <td class="fw-semibold">{{ item.stationName }}</td>
+            <td>{{ item.busNumber }}</td>
+            <td>
+             <span
+              [ngStyle]="{
+                'background-color': item.busType === 'GOVT.' ? '#28a745' : 'transparent',
+                color: item.busType === 'GOVT.' ? '#fff' : '#000',
+                padding: item.busType === 'GOVT.' ? '4px 10px' : '',
+                'border-radius': item.busType === 'GOVT.' ? '4px' : ''
+              }"
+            >
+              {{ item.busType }}
+            </span>
+            </td>
+            <td>{{ item.fromStation }}</td>
+            <td>{{ item.toStation }}</td>
+            <td class="text-success fw-medium">{{ item.arrivalTime }}</td>
+            <td class="text-danger fw-medium">{{ item.departureTime }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <ng-template #noData>
+    <div class="alert alert-warning text-center">
+      😕 No data found for this route.
+    </div>
+  </ng-template>
+</div>

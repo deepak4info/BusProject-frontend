@@ -1,0 +1,20 @@
+<div class="blog-container">
+    <header class="blog-header">
+      <h1>Haryana Roadways Bus Routes</h1>
+      <p>Find bus routes, schedules, and essential details for easy travel.</p>
+    </header>
+  
+    <div class="blog-content">
+      <div class="blog-card" *ngFor="let route of busRoutes">
+        <div class="card-image">
+          <img [src]="route.image" [alt]="route.title" />
+        </div>
+        <div class="card-info">
+          <h2>{{ route.title }}</h2>
+          <span class="badge">{{ route.distance }} km</span>
+          <p class="route-details">{{ route.details }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

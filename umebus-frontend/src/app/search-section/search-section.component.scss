@@ -1,0 +1,108 @@
+.search-wrapper {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f4f6f9;
+  border-radius: 16px;
+}
+
+.heading {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.route-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 20px 25px;
+  margin-bottom: 25px;
+  transition: 0.3s ease;
+}
+
+.route-card:hover {
+  transform: scale(1.01);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.left h3 {
+  font-size: 22px;
+  margin: 0;
+  color: #007bff;
+}
+
+.type {
+  background: #28a745;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.middle {
+  display: flex;
+  align-items: center;
+}
+
+.time-block {
+  text-align: center;
+  margin: 0 10px;
+}
+
+.time {
+  font-size: 20px;
+  font-weight: 600;
+  display: block;
+  color: #2c3e50;
+}
+
+.label {
+  font-size: 12px;
+  color: #888;
+}
+
+.arrow {
+  font-size: 20px;
+  color: #555;
+}
+
+.right {
+  text-align: right;
+}
+
+.capacity {
+  display: block;
+  font-weight: bold;
+  color: #333;
+}
+
+.days {
+  font-size: 12px;
+  color: #666;
+}
+
+.card-bottom p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.no-data {
+  text-align: center;
+  font-size: 16px;
+  color: red;
+  padding: 40px 0;
+}

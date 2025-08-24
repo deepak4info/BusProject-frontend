@@ -1,0 +1,132 @@
+// Color Variables
+$primary-color: #184e77;
+$secondary-color: #184e77;
+$background-light: #f4f4f4;
+$text-color: #333;
+
+// Keyframe Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// Blog Container
+.blog-container {
+  background-color: $background-light;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+// Header
+.blog-header {
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  animation: fadeIn 1s ease-in-out;
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 1.2rem;
+    font-weight: lighter;
+  }
+}
+
+// Blog Content
+.blog-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+// Blog Card
+.blog-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  margin: 15px;
+  width: 350px;
+  text-align: left;
+  transition: transform 0.3s ease;
+  animation: scaleUp 0.8s ease-in-out;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+
+  .card-info {
+    padding: 15px;
+
+    h2 {
+      font-size: 1.4rem;
+      color: $primary-color;
+    }
+
+    .badge {
+      background: $secondary-color;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .route-details {
+      font-size: 1rem;
+      color: $text-color;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .blog-header h1 {
+    font-size: 2rem;
+  }
+
+  .blog-card {
+    width: 90%;
+  }
+}

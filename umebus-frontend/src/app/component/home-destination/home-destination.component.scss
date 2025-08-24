@@ -1,0 +1,131 @@
+.success {
+    color: #184e77;
+    font-weight: bold;
+  }
+  
+  .route {
+    font-size: 18px;
+  }
+  
+  .Destination,
+  .Destinations {
+    width: 100%;
+    border-radius: 8px;
+    height: auto;
+  }
+
+
+.zoom-in {
+  animation: zoomIn 1s ease-in-out;
+}
+
+.success {
+  color: #184e77;
+  font-weight: bold;
+}
+
+.route {
+  font-size: 18px;
+}
+
+.Destination,
+.Destinations {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+// Fade-in animation
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Zoom-in animation
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Apply animations
+.fade-in {
+  animation: fadeInUp 1s ease-out;
+}
+
+.zoom-in {
+  animation: zoomIn 1s ease-in-out;
+}
+
+.success {
+  color: #184e77;
+  font-weight: bold;
+}
+
+.route {
+  font-size: 18px;
+}
+
+.Destination,
+.Destinations {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Responsive Styles
+@media (max-width: 768px) {
+  .route {
+    font-size: 16px;
+  }
+
+  .destination-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Destination,
+  .Destinations {
+    max-width: 90%;
+    margin-bottom: 15px;
+  }
+
+  .fade-in {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .zoom-in {
+    animation: zoomIn 0.8s ease-in-out;
+  }
+}
+
+@media (max-width: 480px) {
+  .route {
+    font-size: 14px;
+  }
+
+  .Destination,
+  .Destinations {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+}

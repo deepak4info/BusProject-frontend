@@ -1,0 +1,54 @@
+<mat-sidenav-container class="mobile-menu-container">
+  <!-- Header Toolbar -->
+
+  
+  <mat-toolbar color="primary" class="header">
+    <span class="logo" style="font-weight: bold; font-size: 30px;" routerLink="/"> U & ME <span class="text-danger" style="font-weight: bold;">BUS</span></span>
+
+
+    <!-- Desktop Menu -->
+    <div class="nav-links">
+      <button mat-button  routerLink="/" routerLinkActive="text-white" >Home</button>
+     
+
+      <button mat-button  routerLink="/about-us"  routerLinkActive="text-info">About Us</button>
+      <button mat-button  routerLink="/enquiry-number"  routerLinkActive="text-info">Bus Enquiry Number</button>
+
+      
+
+
+      <button mat-button
+      routerLink="/blog"
+        routerLinkActive="text-info"> Blog    </button>
+      
+      <!-- <mat-menu #servicesMenu="matMenu">
+        <button mat-menu-item routerLink="/web">Web Development</button>
+        <button mat-menu-item>SEO</button>
+      </mat-menu> -->
+
+      <button mat-button routerLinkActive="text-info" routerLink="/contact-us">Contact Us</button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button mat-icon-button (click)="toggleMenu()" class="menu-icon">
+      <mat-icon >{{ isMenuOpen ? 'close' : 'menu' }}</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <!-- Amazon-Style Mobile Menu -->
+  <div class="mobile-menu-overlay" *ngIf="isMenuOpen" (click)="closeMenu()"></div>
+  
+  <div class="amazon-menu mobile-menu" [class.open]="isMenuOpen">
+    <mat-nav-list>
+      <span class="logo" (click)="closeMenu()" style="font-weight: bold; font-size: 30px;" routerLink="/">UME <span class="text-danger" style="font-weight: bold;">BUS</span></span>
+      
+      <p mat-list-item (click)="closeMenu()" routerLink="/" routerLinkActive="text-info">🏠 Home</p>
+      <p mat-list-item (click)="closeMenu()" routerLink="/about-us" routerLinkActive="text-danger">ℹ️ About Us</p>
+      <p mat-button (click)="closeMenu()"  routerLink="/enquiry-number" routerLinkActive="text-info">📞 Bus Enquiry Number</p>
+
+      <p mat-list-item (click)="closeMenu()"   routerLink="/blog"
+      routerLinkActive="text-danger">💼 Blog</p>
+      <p mat-list-item (click)="closeMenu()" routerLink="contact-us" routerLinkActive="text-danger">📞 Contact Us</p>
+    </mat-nav-list>
+  </div>
+</mat-sidenav-container>

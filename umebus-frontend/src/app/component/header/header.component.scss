@@ -1,0 +1,81 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  height: 64px;
+  background: linear-gradient(to right, #184e77, #1e6091, #34a0a4);
+  color: white; // Default text color
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 15px;
+
+    button {
+      color: white; // White text for desktop buttons
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .menu-icon {
+    display: none;
+    color: #fff !important;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}
+
+/* Mobile Menu Amazon-Style */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  padding-top: 20px;
+
+  button {
+    color: black; // Black text for mobile buttons
+  }
+}
+
+.mobile-menu.open {
+  left: 0;
+}
+
+/* Style List Items */
+mat-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+}
+
+mat-list-item {
+  font-size: 18px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+mat-list-item:hover {
+  background: rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,51 @@
+<div class="container mt-5">
+  <div class="header">
+    <h2 class="title">Station Routes</h2>
+    <button class="add-btn" (click)="openDialog(false)">+ Add</button>
+  </div>
+
+  <!-- 🚀 Table List -->
+  <div class="mt-4">
+    <table class="table table-striped" *ngIf="!loading">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>RouteID</th>   <!-- ✅ New Column -->
+          <th>BusID</th>
+          <th>FromStation</th>
+          <th>ToStation</th>
+          <th>TotalDistance</th>
+          <th>DaysAvailable</th>
+          <th>ViaRoute Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let route of routes; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ route.busRouteId }}</td>   <!-- ✅ New Data -->
+          <td>{{ route.busId }}</td>
+          <td>{{ route.fromStation }}</td>
+          <td>{{ route.toStation }}</td>
+          <td>{{ route.totalDistance }}</td>
+          <td>{{ route.daysAvailable }}</td>
+          <td>{{ route.viaRouteName }}</td>
+          <td class="d-flex gap-3">
+            <button class="btn btn-warning btn-sm text-white" (click)="openDialog(true, route)">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteBus(route.busRouteId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="routes.length === 0" class="alert alert-warning text-center fade-in">
+      No Data Found
+    </div>
+
+    <div *ngIf="loading" class="text-center mt-4">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+</div>

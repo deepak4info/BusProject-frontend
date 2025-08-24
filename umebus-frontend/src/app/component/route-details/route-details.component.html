@@ -1,0 +1,24 @@
+<div class="tracker-container">
+  <h2>🚌 UMEBUS - Live Bus Tracker</h2>
+
+  <div class="route">
+    <div class="bus" [style.left.%]="busPosition"></div>
+
+    <div class="stops">
+      <div
+        class="stop"
+        *ngFor="let stop of stops; let i = index"
+        [ngClass]="{ active: currentStop === i }"
+        (click)="moveBus(i)"
+      >
+        <span class="dot"></span>
+        <div class="stop-name">
+          {{ stop.name }}
+        </div>
+        <div class="stop-name">
+          ⏳ ETA: {{ stop.time }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

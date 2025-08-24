@@ -1,0 +1,40 @@
+<div class="about-container">
+  <header class="about-header">
+    <h1>Welcome to U & ME BUS</h1>
+    <p>Your trusted travel partner for Haryana Roadways bus routes.</p>
+  </header>
+
+  <section class="about-content">
+    <div class="about-image">
+      <img [src]="imgSrc" alt="UMEBUS Haryana Roadways">
+    </div>
+    <div class="about-text">
+      <h2>About U & ME BUS</h2>
+      <p>
+       U & ME BUS is dedicated to providing real-time Haryana Roadways bus schedules, 
+        routes, and travel updates. We ensure smooth and hassle-free journeys for passengers.
+      </p>
+      <p>
+        Whether you are traveling from Hisar to Chandigarh, Rohtak to Delhi, or Ambala to Gurgaon, 
+        our platform offers accurate and up-to-date bus route details.
+      </p>
+      <button class="learn-more">Learn More</button>
+    </div>
+  </section>
+
+  <section class="bus-routes">
+    <h2>Popular Routes</h2>
+    <div class="route-cards">
+      <div class="route-card" *ngFor="let route of busRoutes">
+        <div class="card-image">
+          <img [src]="route.image" [alt]="route.title">
+        </div>
+        <div class="card-info">
+          <h3>{{ route.title }}</h3>
+          <span class="badge">{{ route.distance }} km</span>
+          <p>{{ route.details }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,24 @@
+<!-- <app-sidebar></app-sidebar> -->
+<mat-sidenav-container  class="dashboard-container">
+  <!-- Sidebar -->
+  <mat-sidenav #sidenav mode="side" opened>
+  <app-sidebar ></app-sidebar>
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content>
+    <!-- Navbar with Sidebar Toggle -->
+
+<app-navbar  (toggleSidebar)="sidenav.toggle()" ></app-navbar>
+    <div class="dashboard-content" >
+     
+    
+
+   
+      <router-outlet />
+  
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

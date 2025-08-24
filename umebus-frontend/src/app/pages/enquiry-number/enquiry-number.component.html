@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Bus Stand Enquiry Numbers</h1>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Sr. No.</th>
+          <th>District</th>
+          <th>Bus Stand</th>
+          <th>Contact Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contact of busStandContacts; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ contact.district }}</td>
+          <td>{{ contact.busStand }}</td>
+          <td class="contact">{{ contact.contact }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

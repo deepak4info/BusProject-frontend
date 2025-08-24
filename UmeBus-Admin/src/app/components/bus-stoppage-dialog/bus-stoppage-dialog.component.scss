@@ -1,0 +1,134 @@
+::ng-deep .mat-dialog-container {
+    background: linear-gradient(135deg, #f0f8ff, #e3f2fd);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+}
+
+
+  
+  // Heading Styling
+  .heading {
+    background: linear-gradient(135deg, #333, #283593); // Removed extra comma
+    color: hsl(0, 0%, 100%);
+    padding: 25px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    text-align: center;
+  }
+  .form-scroll {
+  max-height: 400px; /* adjust as needed */
+  overflow-y: auto;
+  padding-right: 10px;
+}
+.form-scroll {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 12px;
+}
+
+  // Title Styling
+  h1 {
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  // Form Styling
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  
+    .form-group {
+      margin-bottom: 16px;
+  
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+        color: #333;
+      }
+  
+      input, select {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+  
+        &:focus {
+          border-color: #4e4f54;
+          outline: none;
+          box-shadow: 0 3px 6px rgba(63, 81, 181, 0.2);
+        }
+      }
+    }
+  }
+  
+  // Dialog Actions - Button Alignment
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  // Button Styling
+  button[mat-raised-button] {
+    background-color: #333;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    outline: none;
+  
+    &:hover {
+      background: linear-gradient(135deg, #283593, #333);
+      transform: scale(1.05);
+    }
+  }
+  
+  button[mat-button] {
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 10px 16px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  
+    &:hover {
+      background-color: #bdbdbd;
+      transform: scale(1.05);
+    }
+  }
+  
+  // Error Message Styling
+  .error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.9em;
+  }
+  
+  // Fade-in Animation
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

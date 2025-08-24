@@ -1,0 +1,98 @@
+// Footer Styles
+.main-footer {
+  background: linear-gradient(to right, #34a0a4, #184e77, #1e6091);
+  color: #fff;
+  padding: 40px 0;
+}
+
+h5 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+p, li {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+// Gallery Images
+.gallery-img {
+  width: 80px;
+  height: 60px;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+// Fade-in animation
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Apply animation to sections
+.fade-in {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+// Footer Bottom
+.footer-bottom {
+  padding-top: 20px;
+  text-align: center;
+}
+
+// Social Icons (Fix alignment for mobile)
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+// Responsive Fixes
+@media (max-width: 768px) {
+  .footer-section .row {
+    flex-direction: column;
+    text-align: center;
+  }
+  .gallerys{
+    display: none;
+  }
+
+  .gallery-img {
+    width: 60px;
+    height: 50px;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-img {
+    width: 50px;
+    height: 40px;
+  }
+  .gallerys{
+    display: none;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+}

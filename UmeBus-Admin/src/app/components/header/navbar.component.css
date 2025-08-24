@@ -1,0 +1,21 @@
+/* Default Light Mode */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-theme mat-toolbar {
+  background-color: #333 !important;
+}
+
+.dark-theme .mat-menu-panel {
+  background-color: #444 !important;
+  color: white !important;
+}

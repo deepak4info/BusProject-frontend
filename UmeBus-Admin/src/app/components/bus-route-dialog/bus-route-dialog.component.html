@@ -1,0 +1,39 @@
+<div class="modal fade show d-block" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content p-4">
+      <div class="modal-header add-btn">
+        <h5 class="modal-title">{{ isEditMode ? 'Edit Route' : 'Add Route' }}</h5>
+        <button type="button" class="close-btn fs-1" (click)="cancel()" aria-label="Close">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <form #routeForm="ngForm" (ngSubmit)="save(routeForm)">
+          <div class="form-group">
+            <label for="routeName">Route Name</label>
+            <input type="text" class="form-control" id="routeName" [(ngModel)]="newRoute.routeName" name="routeName" required>
+          </div>
+
+          <div class="form-group">
+            <label for="startPoint">Start Point</label>
+            <input type="text" class="form-control" id="startPoint" [(ngModel)]="newRoute.startPoint" name="startPoint" required>
+          </div>
+
+          <div class="form-group">
+            <label for="Vaya">Via</label>
+            <input type="text" class="form-control" id="Vaya" [(ngModel)]="newRoute.Vaya" name="Vaya" required>
+          </div>
+
+          <div class="form-group">
+            <label for="endPoint">End Point</label>
+            <input type="text" class="form-control" id="endPoint" [(ngModel)]="newRoute.endPoint" name="endPoint" required>
+          </div>
+
+          <div class="modal-footer mt-3">
+            <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+            <button type="submit" class="btn btn-primary">{{ isEditMode ? 'Update' : 'Save' }}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

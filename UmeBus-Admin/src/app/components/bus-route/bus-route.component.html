@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="header">
+    <h2 class="title">Bus Routes</h2>
+    <button class="btn btn-success mb-3" (click)="openDialog(false)">+ Add Route</button>
+  </div>
+
+  <div *ngIf="busRoutes.length === 0" class="alert alert-warning text-center">
+    No Data Found
+  </div>
+
+  <table class="table table-striped table-bordered" *ngIf="busRoutes.length > 0">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Route Name</th>
+        <th>Start Point</th>
+        <th>Via</th>
+        <th>End Point</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let route of busRoutes; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ route.routeName }}</td>
+        <td>{{ route.startPoint }}</td>
+        <td>{{ route.Vaya }}</td>
+        <td>{{ route.endPoint }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm me-2" (click)="openDialog(true, route, i)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteRoute(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

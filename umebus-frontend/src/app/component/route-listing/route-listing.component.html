@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>GET /api/BusRoute/stoppages</h2>
+
+  <form [formGroup]="routeForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>From Station ID</label>
+      <input type="number" formControlName="fromStationId" required />
+    </div>
+
+    <div>
+      <label>To Station ID</label>
+      <input type="number" formControlName="toStationId" required />
+    </div>
+
+    <div>
+      <label>Route ID</label>
+      <input type="number" formControlName="routeId" required />
+    </div>
+
+    <button type="submit">Execute</button>
+  </form>
+
+  <div *ngIf="response">
+    <h3>Response:</h3>
+    <!-- <pre>{{ response | json }}</pre> -->
+  </div>
+</div>

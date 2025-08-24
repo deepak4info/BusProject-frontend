@@ -1,0 +1,94 @@
+.dashboard-container {
+  height: 100vh; /* Full height */
+  overflow: hidden;
+}
+
+/* Sidebar */
+mat-sidenav {
+  width: 250px;
+  height: 100vh; /* Full height */
+  position: fixed; /* Fix sidebar */
+  left: 0;
+  top: 0;
+  overflow-y: auto; /* Enable scrolling inside sidebar if needed */
+}
+
+.dashboard-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.welcome-card {
+  padding: 20px;
+  border-radius: 8px;
+}
+.welcome-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+.stats mat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+.stats mat-card h4 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
+.stats mat-card p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+.stats mat-card .stat-icon {
+  font-size: 30px;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.analytics-chart {
+  padding: 20px;
+  background: #f4f6f9;
+  border-radius: 10px;
+  text-align: center;
+}
+.analytics-chart h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 10px;
+  }
+  .stats {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+@media (max-width: 480px) {
+  .stats mat-card {
+    padding: 10px;
+  }
+  .welcome-card {
+    font-size: 14px;
+  }
+  .analytics-chart {
+    padding: 10px;
+  }
+}/*# sourceMappingURL=app.component.css.map */

@@ -1,0 +1,61 @@
+<div class="bg-image">
+  <h1 class="text-center hindi-heading mb-5 mt-3">{{ currentText }}</h1>
+
+  <div class="container text-center search-route">
+    <h3 class="text-white route-bus">Search Buses Timetable</h3>
+
+    <!-- FROM Station -->
+    <div class="mt-4">
+      <input
+        type="text"
+        class="form-control p-3"
+        placeholder="🚌 Enter Departure Bus Stand"
+        [(ngModel)]="fromStation"
+        (input)="filterDepartureStands()"
+        (focus)="filterDepartureStands(true)"
+        [ngClass]="{ 'is-invalid': fromStationError }"
+      />
+      <div *ngIf="fromStationError" class="invalid-feedback">Please enter a departure location.</div>
+    </div>
+    <div *ngIf="filteredDepartureStands.length > 0" class="suggestion-box">
+      <ul class="filters">
+        <li *ngFor="let stand of filteredDepartureStands"
+            (click)="fromStation = stand; filteredDepartureStands = []">
+          {{ stand }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- SWAP BUTTON -->
+    <div class="text-center mt-2 swap-btn" (click)="swapLocations()">
+      <span class="material-icons">swap_vert</span>
+    </div>
+
+    <!-- TO Station -->
+    <div class="mt-2">
+      <input
+        type="text"
+        class="form-control p-3"
+        placeholder="📍 Enter Arrival Bus Stand"
+        [(ngModel)]="toStation"
+        (input)="filterArrivalStands()"
+        (focus)="filterArrivalStands(true)"
+        [ngClass]="{ 'is-invalid': toStationError }"
+      />
+      <div *ngIf="toStationError" class="invalid-feedback">Please enter an arrival location.</div>
+    </div>
+    <div *ngIf="filteredArrivalStands.length > 0" class="suggestion-box">
+      <ul class="filters">
+        <li *ngFor="let stand of filteredArrivalStands"
+            (click)="toStation = stand; filteredArrivalStands = []">
+          {{ stand }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- SEARCH Button -->
+    <div class="d-grid mt-4">
+      <button class="btn btn-primary" (click)="searchTimetable()">🔍 Search</button>
+    </div>
+  </div>
+</div>

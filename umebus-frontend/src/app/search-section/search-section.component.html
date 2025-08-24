@@ -1,0 +1,39 @@
+<div class="search-wrapper">
+  <h2 class="heading">🚌 Available Bus Routes</h2>
+
+  <div *ngIf="routeData.length > 0; else noData">
+    <div *ngFor="let route of routeData" class="route-card" (click)="viewDetails(route.busRouteID)">
+      <div class="card-top">
+        <div class="left">
+          <h3>{{ route.busNumber }}</h3>
+          <span class="type">{{ route.busType }}</span>
+        </div>
+        <div class="middle">
+          <div class="time-block">
+            <span class="time">{{ route.sourceArrivalTime }}</span>
+            <span class="label">Departure</span>
+          </div>
+          <span class="arrow">🡒</span>
+          <div class="time-block">
+            <span class="time">{{ route.destinationArrivalTime }}</span>
+            <span class="label">Arrival</span>
+          </div>
+        </div>
+        <div class="right">
+          <span class="capacity">{{ route.capacity }} Seats</span>
+          <span class="days">{{ route.daysAvailable }}</span>
+        </div>
+      </div>
+
+      <div class="card-bottom">
+        <p><strong>From:</strong> {{ route.fromStation }}</p>
+        <p><strong>To:</strong> {{ route.toStation }}</p>
+        <p><strong>Via:</strong> {{ route.viaRouteName }}</p>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noData>
+    <p class="no-data">❌ No route data available.</p>
+  </ng-template>
+</div>

@@ -1,0 +1,73 @@
+<div class="heading">
+  <h1 mat-dialog-title>{{ data.editMode ? 'Edit Bus Route' : 'Add Bus Route' }}</h1>
+</div>
+
+<div mat-dialog-content class="form-scroll">
+  <form (ngSubmit)="save()">
+    <!-- Bus Route ID -->
+    <div class="form-group">
+      <label>Bus Route ID:</label>
+      <input type="number" [(ngModel)]="stoppage.busRouteID" name="busRouteID" required />
+    </div>
+
+    <!-- Bus ID -->
+    <div class="form-group">
+      <label>Bus ID:</label>
+      <input type="number" [(ngModel)]="stoppage.busID" name="busID" required />
+    </div>
+
+    <!-- Sorting ID -->
+    <div class="form-group">
+      <label>Sorting ID:</label>
+      <input type="number" [(ngModel)]="stoppage.sortingID" name="sortingID" required />
+    </div>
+
+    <!-- Station ID -->
+    <div class="form-group">
+      <label>Station ID:</label>
+      <input type="number" [(ngModel)]="stoppage.stationID" name="stationID" required />
+    </div>
+
+    <!-- Arrival Time -->
+    <div class="form-group">
+      <label>Arrival Time:</label>
+      <input type="time" [(ngModel)]="stoppage.arrivalTime" name="arrivalTime" required />
+    </div>
+
+    <!-- Departure Time -->
+    <div class="form-group">
+      <label>Departure Time:</label>
+      <input type="time" [(ngModel)]="stoppage.departureTime" name="departureTime" required />
+    </div>
+
+<!-- Done At (Only show in edit mode) -->
+<!-- <div class="form-group" *ngIf="data.editMode">
+  <label>Done At:</label>
+  <input type="datetime-local" [(ngModel)]="stoppage.doneAt" name="doneAt" required />
+</div> -->
+
+<!-- Set doneAt automatically if not in edit mode -->
+<input *ngIf="!data.editMode" type="hidden" [(ngModel)]="stoppage.doneAt" name="doneAt" />
+
+<!-- Status Field (Only show in edit mode) -->
+<div class="form-group" *ngIf="data.editMode">
+  <label>Status:</label>
+  <select [(ngModel)]="stoppage.isActive" name="isActive" required>
+    <option [value]="true">Active</option>
+    <option [value]="false">Inactive</option>
+  </select>
+</div>
+
+<!-- Set status as active automatically if adding -->
+<input *ngIf="!data.editMode" type="hidden" [(ngModel)]="stoppage.isActive" name="isActive" />
+
+
+    <!-- Actions -->
+    <div mat-dialog-actions class="dialog-actions">
+      <button mat-button mat-dialog-close (click)="closeDialog()">Close</button>
+      <button type="submit" mat-raised-button color="primary">Save Station</button>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </form>
+</div>

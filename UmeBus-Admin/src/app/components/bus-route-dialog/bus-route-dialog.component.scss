@@ -1,0 +1,98 @@
+// Custom modal styling
+.modal {
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    .modal-dialog {
+      max-width: 500px;
+    }
+  
+    .modal-content {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+  
+    .modal-header {
+      background-color: #2c3e50;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+  
+    .modal-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  
+    .close-btn {
+      border: none;
+      background: transparent;
+      font-size: 24px;
+      cursor: pointer;
+      color: white;
+      transition: all 0.3s ease-in-out;
+  
+      &:hover {
+        color: #ddd;
+      }
+    }
+  
+    .form-group {
+      margin-bottom: 15px;
+    }
+  
+    .form-control {
+      border-radius: 5px;
+      padding: 10px;
+    }
+  
+    .modal-footer {
+      justify-content: space-between;
+    }
+  
+    .cancel-btn {
+      background-color: #6c757d;
+      color: white;
+      border-radius: 5px;
+      padding: 8px 12px;
+      transition: all 0.3s ease-in-out;
+  
+      &:hover {
+        background-color: darken(#6c757d, 10%);
+      }
+    }
+    .add-btn{
+        background-color: #2c3e50;
+        color: #fff;
+    }
+    .save-btn {
+      background-color: #2c3e50;
+      color: white;
+      border-radius: 5px;
+      padding: 8px 12px;
+      transition: all 0.3s ease-in-out;
+  
+      &:hover {
+        background-color: darken(#2c3e50, 10%);
+      }
+    }
+  }
+  
+  // Fade-in animation for modal
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

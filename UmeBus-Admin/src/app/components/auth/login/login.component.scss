@@ -1,0 +1,162 @@
+// General Styles
+body {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+// Card Styling
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  padding: 20px;
+  border-radius: 10px;
+
+  &:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Flexbox for Centering
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; // Full viewport height
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col {
+  max-width: 400px;
+}
+
+// Navigation Buttons
+.items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+
+  .nav-item {
+    width: 50%;
+    text-align: center;
+    border-bottom: 2px solid #feb47b;
+    border-radius: 4px;
+
+    button {
+      width: 100%;
+      background-color: gray;
+      color: white;
+      border: none;
+      padding: 10px;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background-color: darkgray;
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+// Form Styling
+form {
+  h2 {
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+  }
+
+  .form-label {
+    font-weight: bold;
+  }
+
+  .input-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .form-control {
+    transition: all 0.3s ease;
+
+    &:focus {
+      border-color: #feb47b;
+      box-shadow: 0 0 5px rgba(254, 180, 123, 0.8);
+    }
+  }
+}
+
+// Password Visibility Toggle
+.input-group-text {
+  cursor: pointer;
+}
+
+// Sidebar & Main Content Styling
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+
+  mat-sidenav {
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  mat-sidenav-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dashboard-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+}
+
+// Button Styling
+.btn-dark {
+  background-color: #333;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: #222;
+  }
+}
+
+// Logout Button
+.logout-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: darkred;
+  }
+}

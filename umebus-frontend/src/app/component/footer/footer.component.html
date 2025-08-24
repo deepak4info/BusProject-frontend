@@ -1,0 +1,68 @@
+<footer class="main-footer mt-5">
+  <div class="container footer-section">
+    <div class="row">
+      <!-- Disclaimer Section -->
+      <div class="col-12 col-lg-3 col-sm-6 fade-in mb-4">
+        <h5 class="font-bold">Disclaimer:</h5>
+        <span class="logo-heading">UME</span>
+        <span class="text-danger">BUS</span>
+        <p>
+          यात्रियों को सलाह दी जाती है कि वे घर से निकलने से पहले बस स्टैंड के 
+          पूछताछ नंबर से बस की स्थिति की जानकारी ले लें...
+        </p>
+      </div>
+
+      <!-- About Section -->
+      <div class="col-12 col-lg-3 col-sm-6 fade-in mb-4">
+        <h5 class="font-bold">About redBus</h5>
+        <ul class="list-unstyled">
+          <li>About us</li>
+          <li>Investor Relations</li>
+          <li>Contact us</li>
+          <li>Mobile version</li>
+          <li>redBus on mobile</li>
+          <li>Sitemap</li>
+          <li>Offers</li>
+          <li>Career</li>
+        </ul>
+      </div>
+
+      <!-- Gallery Section -->
+      <div class="col-12 col-lg-3 col-sm-6 fade-in mb-4">
+        <h5 class="font-bold">Gallery</h5>
+        <div class="row gallerys">
+          <div class="col-4 p-1" *ngFor="let image of galleryImages">
+            <img [src]="image" alt="gallery-img" class="gallery-img img-fluid" />
+          </div>
+        </div>
+      </div>
+
+      <!-- District Section -->
+      <div class="col-12 col-lg-3 col-sm-6 fade-in mb-4">
+        <h5 class="font-bold">District</h5>
+        <ul class="list-unstyled">
+          <li *ngFor="let district of districts">{{ district }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Footer Bottom -->
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between text-center footer-bottom">
+      <p class="mb-2 mb-md-0">
+        
+        Copyright       <span class="logo" style="font-weight: bold; " routerLink="/">UME <span class="text-danger" style="font-weight: bold;">BUS</span></span>
+        All Rights Reserved
+      </p>
+      <div class="d-flex gap-3 social-icons">
+        <button mat-icon-button color="primary">
+          <mat-icon>facebook</mat-icon>
+        </button>
+        <button mat-icon-button color="primary">
+          <mat-icon>linkedin</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>
