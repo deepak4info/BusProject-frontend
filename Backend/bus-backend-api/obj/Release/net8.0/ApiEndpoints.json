@@ -110,25 +110,46 @@
   },
   {
     "ContainingType": "WebApplication1.Controllers.BusRouteController",
-    "Method": "GetStoppages",
-    "RelativePath": "api/BusRoute/stoppages",
+    "Method": "GetBusRoutes",
+    "RelativePath": "api/BusRoute/between-stations",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
+        "Name": "sourceStationId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "destinationStationId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication1.Controllers.BusRouteController",
+    "Method": "GetRouteStations",
+    "RelativePath": "api/BusRoute/route-stations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "busRouteId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
         "Name": "fromStationId",
-        "Type": "System.Decimal",
+        "Type": "System.Int64",
         "IsRequired": false
       },
       {
         "Name": "toStationId",
-        "Type": "System.Decimal",
-        "IsRequired": false
-      },
-      {
-        "Name": "routeId",
-        "Type": "System.Decimal",
+        "Type": "System.Int64",
         "IsRequired": false
       }
     ],

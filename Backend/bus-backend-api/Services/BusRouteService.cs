@@ -25,45 +25,36 @@ namespace WebApplication1.Services
         public async Task<List<BusRouteResultModel>> GetBusRoutesBetweenStationsAsync(string FromStation, string ToStation)
         {
             string sql = @$"
-              SELECT DISTINCT 
-    SR.BusRouteID,B.BusID,B.BusNumber,B.BusType,B.Capacity,SR.ViaRouteName,SR.FromStation,SR.ToStation,SR.DaysAvailable,
-  
+SELECT DISTINCT 
+    SD.BusRouteID, 
+    B.BusID,
+    B.BusNumber,
+    B.BusType,
+    B.Capacity,
+    SR.ViaRouteName,
+    SR.FromStation,
+    SR.ToStation,
+    SR.DaysAvailable,
     (
         SELECT TOP 1 ArrivalTime 
-        FROM BusRouteStoppageDetails 
+        FROM dbo.BusRouteStoppageDetails 
         WHERE StationID = @FromStation AND BusRouteID = SR.BusRouteID
     ) AS SourceArrivalTime,
-    
     (
         SELECT TOP 1 ArrivalTime 
-        FROM BusRouteStoppageDetails 
+        FROM dbo.BusRouteStoppageDetails 
         WHERE StationID = @ToStation AND BusRouteID = SR.BusRouteID
     ) AS DestinationArrivalTime
 FROM 
-    StationRoutes SR
-INNER JOIN Bus B ON SR.BusID = B.BusID
+    dbo.BusRouteStoppageDetails SD
+INNER JOIN dbo.StationsMaster SM ON SD.StationID = SM.StationID
+INNER JOIN dbo.StationRoutes SR ON SD.BusRouteID = SR.BusRouteID
+INNER JOIN dbo.Bus B ON B.BusID = SR.BusID
+WHERE 
+    SD.SortingID <= (SELECT TOP 1 SortingID FROM dbo.BusRouteStoppageDetails WHERE StationID = @FromStation)
+    AND SD.SortingID >= (SELECT TOP 1 SortingID FROM dbo.BusRouteStoppageDetails WHERE StationID = @ToStation);
 
-WHERE EXISTS (
-    SELECT 1 
-    FROM BusRouteStoppageDetails 
-    WHERE StationID = @FromStation AND BusRouteID = SR.BusRouteID
-)
-AND EXISTS (
-    SELECT 1 
-    FROM BusRouteStoppageDetails 
-    WHERE StationID = @ToStation AND BusRouteID = SR.BusRouteID
-)
-
-AND (
-    SELECT SortingID 
-    FROM BusRouteStoppageDetails 
-    WHERE StationID = @FromStation AND BusRouteID = SR.BusRouteID
-) < (
-    SELECT SortingID 
-    FROM BusRouteStoppageDetails 
-    WHERE StationID = @ToStation AND BusRouteID = SR.BusRouteID
-
-                );";
+            ";
 
             var fromParam = new SqlParameter("@FromStation", FromStation);
             var toParam = new SqlParameter("@ToStation", ToStation);
