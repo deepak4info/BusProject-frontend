@@ -190,34 +190,62 @@
         }
       }
     },
-    "/api/BusRoute/stoppages": {
+    "/api/BusRoute/between-stations": {
       "get": {
         "tags": [
           "BusRoute"
         ],
         "parameters": [
           {
+            "name": "sourceStationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "destinationStationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/BusRoute/route-stations": {
+      "get": {
+        "tags": [
+          "BusRoute"
+        ],
+        "parameters": [
+          {
+            "name": "busRouteId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
             "name": "fromStationId",
             "in": "query",
             "schema": {
-              "type": "number",
-              "format": "double"
+              "type": "integer",
+              "format": "int64"
             }
           },
           {
             "name": "toStationId",
             "in": "query",
             "schema": {
-              "type": "number",
-              "format": "double"
-            }
-          },
-          {
-            "name": "routeId",
-            "in": "query",
-            "schema": {
-              "type": "number",
-              "format": "double"
+              "type": "integer",
+              "format": "int64"
             }
           }
         ],
